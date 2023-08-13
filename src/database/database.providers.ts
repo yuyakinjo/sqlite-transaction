@@ -1,3 +1,4 @@
+import { User } from '../user/entities/user.entity';
 import { DataSource } from 'typeorm';
 
 export const databaseProviders = [
@@ -7,6 +8,7 @@ export const databaseProviders = [
       const dataSource = new DataSource({
         type: 'sqlite',
         database: './src/database.sqlite',
+        entities: [User],
         synchronize: true,
       });
 
