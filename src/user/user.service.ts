@@ -11,7 +11,7 @@ export class UserService {
     @Inject(userProvider.provide) private repository: Repository<User>,
   ) {}
   create(createUserDto: CreateUserDto) {
-    return this.repository.upsert([createUserDto], ['id']);
+    return this.repository.save([createUserDto]);
   }
 
   findAll() {
